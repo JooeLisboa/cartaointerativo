@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { CinematicBackground } from '@/components/cinematic-background';
+import { ClinicaPremiumDemo } from '@/components/niche/clinica-premium-demo';
 import { NicheFloatingCta } from '@/components/niche/niche-floating-cta';
 import { NicheFooter } from '@/components/niche/niche-footer';
 import { NicheHero } from '@/components/niche/niche-hero';
@@ -24,6 +25,9 @@ export default function NichePage({ params }: { params: { slug: string } }) {
     return <OticaPremiumDemo />;
   }
 
+  if (params.slug === 'clinica') {
+    return <ClinicaPremiumDemo />;
+  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-bgDeep px-4 py-8 pb-24 text-textStrong sm:px-6">

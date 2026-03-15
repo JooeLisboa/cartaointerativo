@@ -2,7 +2,7 @@ export type ServiceAction = {
   label: string;
   message: string;
   icon: string;
-  kind: 'whatsapp' | 'mailto' | 'portfolio';
+  kind: 'whatsapp' | 'mailto';
 };
 
 export type Profile = {

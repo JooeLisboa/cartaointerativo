@@ -3,34 +3,19 @@ import { Profile } from '@/types/profile';
 export const profile: Profile = {
   name: 'Jhonatan Tiburcio',
   role: 'Criador de experiências digitais premium',
-  headline: 'Landing Pages • Cartões Interativos • Consultoria Tech para Conversão',
-  description:
-    'Projeto experiências digitais com estética premium, narrativa de autoridade e estrutura comercial para transformar presença online em vendas consistentes.',
+  headline: 'Landing Pages e Cartões Interativos com visual premium',
+  description: 'Projetos pensados para destacar marcas e transformar visitas em contato.',
   location: 'Bauru/SP, Brasil',
   email: 'lisboatiburcio@gmail.com',
   whatsapp: '+55 14 99124-2019',
   profileImage: '/profile.jpg',
-  premiumChips: [
-    'Posicionamento de Alto Valor',
-    'Design Cinemático para Conversão',
-    'Arquitetura Next.js Premium',
-  ],
-  credibilityPoints: [
-    'Foco em páginas e cartões orientados à conversão',
-    'Aplicação de motion design refinado para percepção premium',
-    'Estrutura pronta para escalar demos por nicho e acelerar vendas',
-  ],
+  premiumChips: ['Design premium', 'Conversão estratégica', 'Experiência mobile-first'],
+  credibilityPoints: ['+6 anos em produtos digitais', 'Entrega com foco em conversão', 'Fluxo premium para negócios locais e especialistas'],
   primaryCtaMessage:
-    'Olá Jhonatan, vi sua apresentação premium e quero conversar sobre um projeto para meu negócio.',
-  portfolioLabel: 'Ver Portfólio de Cartões por Nicho',
-  stack: ['Next.js 14', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Automação e IA', 'Arquitetura de Conversão'],
+    'Olá Jhonatan, vi sua apresentação premium e quero iniciar um projeto para meu negócio.',
+  portfolioLabel: 'Ver Modelos Premium',
+  stack: ['Next.js 14', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
   serviceActions: [
-    {
-      label: 'Ver Portfólio',
-      message: '',
-      icon: 'GalleryHorizontalEnd',
-      kind: 'portfolio',
-    },
     {
       label: 'Criar Landing Page',
       message: 'Olá, quero criar uma landing page premium de alta conversão para meu negócio.',
@@ -50,7 +35,7 @@ export const profile: Profile = {
       kind: 'whatsapp',
     },
     {
-      label: 'Dashboards / Automação',
+      label: 'Dashboards e Automação',
       message: 'Olá, quero implementar dashboards e automações para otimizar meu negócio.',
       icon: 'BarChart3',
       kind: 'whatsapp',

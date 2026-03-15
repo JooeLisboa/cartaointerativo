@@ -6,32 +6,23 @@ export const CinematicBackground = () => {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-[#040612]" />
-
       <motion.div
-        className="absolute -top-32 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(139,92,246,0.35)_0%,_rgba(56,189,248,0.08)_40%,_transparent_70%)] blur-3xl"
-        animate={{ scale: [1, 1.08, 1], opacity: [0.7, 0.95, 0.7], x: ['-50%', '-44%', '-50%'] }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -top-40 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.35)_0%,rgba(56,189,248,0.14)_40%,transparent_72%)] blur-3xl"
+        animate={{ scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
       />
-
       <motion.div
-        className="absolute right-[-8rem] top-1/4 h-96 w-96 rounded-full bg-[radial-gradient(circle,_rgba(103,232,249,0.28)_0%,_rgba(56,189,248,0.12)_40%,_transparent_72%)] blur-3xl"
-        animate={{ y: [0, -35, 0], opacity: [0.45, 0.75, 0.45] }}
+        className="absolute right-[-6rem] top-1/4 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(192,132,252,0.28)_0%,rgba(34,211,238,0.08)_46%,transparent_70%)] blur-3xl"
+        animate={{ y: [0, -28, 0], x: [0, -16, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
       />
-
       <motion.div
-        className="absolute bottom-[-7rem] left-[-5rem] h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(168,85,247,0.24)_0%,_rgba(14,165,233,0.1)_45%,_transparent_70%)] blur-3xl"
-        animate={{ x: [0, 35, 0], y: [0, -20, 0], opacity: [0.3, 0.65, 0.3] }}
-        transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-[-9rem] left-[-4rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.24)_0%,rgba(139,92,246,0.14)_45%,transparent_72%)] blur-3xl"
+        animate={{ y: [0, -24, 0], x: [0, 24, 0] }}
+        transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
       />
-
-      <motion.div
-        className="absolute inset-0 bg-noise opacity-70"
-        animate={{ opacity: [0.5, 0.7, 0.5] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      />
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(4,6,18,0.7),rgba(4,6,18,0.98))]" />
+      <div className="absolute inset-0 bg-noise opacity-60" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(4,6,18,0.65),rgba(4,6,18,0.98))]" />
     </div>
   );
 };

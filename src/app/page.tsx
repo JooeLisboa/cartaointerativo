@@ -4,6 +4,7 @@ import { MagneticActionButtons } from '@/components/magnetic-action-buttons';
 import { PremiumFooter } from '@/components/premium-footer';
 import { PremiumParticles } from '@/components/premium-particles';
 import { TechSignature } from '@/components/tech-signature';
+import { PortfolioButton } from '@/components/portfolio/portfolio-button';
 import { profile } from '@/data/profile';
 
 export default function Home() {
@@ -11,9 +12,11 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden bg-bgDeep px-4 py-8 text-textStrong sm:px-6">
       <CinematicBackground />
       <PremiumParticles />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-xl flex-col gap-5">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-5">
         <HeroIdentity profile={profile} />
+        <div className="flex justify-center">
+          <PortfolioButton label={profile.portfolioLabel} />
+        </div>
         <MagneticActionButtons profile={profile} />
         <TechSignature profile={profile} />
         <PremiumFooter profile={profile} />

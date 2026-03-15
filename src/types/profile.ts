@@ -14,4 +14,5 @@ export type Profile = {
   primaryCtaMessage: string;
   services: ServiceItem[];
   stack: string[];
+  profileImage: string;
 };

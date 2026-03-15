@@ -2,41 +2,30 @@
 
 import { motion } from 'framer-motion';
 
-const particles = Array.from({ length: 18 }).map((_, i) => ({
-  id: i,
-  size: 1 + (i % 3),
-  x: (i * 13) % 100,
-  y: (i * 19) % 100,
-  delay: i * 0.2,
-  duration: 10 + (i % 8),
+const particles = Array.from({ length: 24 }).map((_, id) => ({
+  id,
+  x: (id * 17) % 100,
+  y: (id * 23) % 100,
+  size: 1 + (id % 2),
+  duration: 12 + (id % 9),
+  delay: id * 0.15,
 }));
 
-export const PremiumParticles = () => {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {particles.map((particle) => (
-        <motion.span
-          key={particle.id}
-          className="absolute rounded-full bg-white/25"
-          style={{
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-            width: particle.size,
-            height: particle.size,
-          }}
-          animate={{
-            y: [0, -18, 0],
-            x: [0, 6, 0],
-            opacity: [0.05, 0.3, 0.05],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: particle.delay,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+export const PremiumParticles = () => (
+  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    {particles.map((particle) => (
+      <motion.span
+        key={particle.id}
+        className="absolute rounded-full bg-white/30"
+        style={{
+          left: `${particle.x}%`,
+          top: `${particle.y}%`,
+          width: particle.size,
+          height: particle.size,
+        }}
+        animate={{ y: [0, -20, 0], x: [0, 8, 0], opacity: [0.04, 0.25, 0.04] }}
+        transition={{ duration: particle.duration, delay: particle.delay, repeat: Infinity, ease: 'easeInOut' }}
+      />
+    ))}
+  </div>
+);

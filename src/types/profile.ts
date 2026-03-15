@@ -1,18 +1,23 @@
-export type ServiceItem = {
+export type ServiceAction = {
   label: string;
-  icon: string;
   message: string;
+  icon: string;
+  kind: 'whatsapp' | 'mailto' | 'portfolio';
 };
 
 export type Profile = {
   name: string;
+  role: string;
   headline: string;
   description: string;
   location: string;
-  whatsapp: string;
   email: string;
-  primaryCtaMessage: string;
-  services: ServiceItem[];
-  stack: string[];
+  whatsapp: string;
   profileImage: string;
+  premiumChips: string[];
+  credibilityPoints: string[];
+  primaryCtaMessage: string;
+  portfolioLabel: string;
+  stack: string[];
+  serviceActions: ServiceAction[];
 };

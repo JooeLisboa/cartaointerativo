@@ -7,11 +7,16 @@
 }
 
 body {
+  min-height: 100vh;
   background: #040612;
   color: #f3f7ff;
-  min-height: 100vh;
 }
 
 * {
   border-color: rgba(148, 163, 184, 0.35);
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.35);
+  color: #f8fbff;
 }

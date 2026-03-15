@@ -1,10 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Badge,
   BarChart3,
-  Bot,
+  GalleryHorizontalEnd,
   Globe,
   Mail,
   MessageCircle,
@@ -12,69 +13,71 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-import { Profile } from '@/types/profile';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
+import { Profile } from '@/types/profile';
 
 const iconMap: Record<string, LucideIcon> = {
-  Bot,
-  Globe,
   Rocket,
   Badge,
+  Globe,
   BarChart3,
+  MessageCircle,
+  Mail,
+  GalleryHorizontalEnd,
 };
 
-type MagneticActionButtonsProps = {
-  profile: Profile;
-};
+type MagneticActionButtonsProps = { profile: Profile };
 
 export const MagneticActionButtons = ({ profile }: MagneticActionButtonsProps) => {
-  const actionItems = [
-    ...profile.services.map((service) => ({
-      label: service.label,
-      href: buildWhatsAppLink(profile.whatsapp, service.message),
-      icon: iconMap[service.icon] ?? MessageCircle,
-    })),
-    {
-      label: 'Falar no WhatsApp',
-      href: buildWhatsAppLink(profile.whatsapp, profile.primaryCtaMessage),
-      icon: MessageCircle,
-    },
-    {
-      label: 'Enviar E-mail',
-      href: `mailto:${profile.email}`,
-      icon: Mail,
-    },
-  ];
-
   return (
     <section className="space-y-3">
-      {actionItems.map((item, index) => {
-        const Icon = item.icon;
+      {profile.serviceActions.map((action, index) => {
+        const Icon = iconMap[action.icon] ?? MessageCircle;
+        const className =
+          action.kind === 'portfolio'
+            ? 'border-violet-200/40 bg-gradient-to-r from-fuchsia-500/35 via-violet-500/30 to-cyan-500/25 shadow-[0_20px_60px_-30px_rgba(168,85,247,0.75)]'
+            : 'border-white/15 bg-white/[0.05]';
+        const content = (
+          <>
+            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition duration-700 group-hover:translate-x-full" />
+            <span className="relative z-10 flex items-center gap-3">
+              <span className="rounded-xl border border-white/20 bg-white/10 p-2.5 text-cyan-100">
+                <Icon className="h-4 w-4" />
+              </span>
+              <span className="text-sm font-medium text-textStrong">{action.label}</span>
+            </span>
+          </>
+        );
+
+        if (action.kind === 'portfolio') {
+          return (
+            <motion.div key={action.label} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.08 }}>
+              <Link
+                href="/portfolio"
+                className={`group relative flex items-center justify-between overflow-hidden rounded-2xl border px-5 py-4 backdrop-blur-xl ${className}`}
+              >
+                {content}
+                <span className="relative z-10 text-xs uppercase tracking-[0.18em] text-white/90">Destaque</span>
+              </Link>
+            </motion.div>
+          );
+        }
+
+        const href = action.kind === 'mailto' ? `mailto:${profile.email}?subject=${encodeURIComponent(action.message)}` : buildWhatsAppLink(profile.whatsapp, action.message);
 
         return (
           <motion.a
-            key={item.label}
-            href={item.href}
+            key={action.label}
+            href={href}
             target="_blank"
             rel="noreferrer"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.08 * index, ease: 'easeOut' }}
-            whileHover={{ y: -3, scale: 1.01 }}
-            whileTap={{ scale: 0.985 }}
-            className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-white/15 bg-[rgba(15,23,42,0.38)] px-5 py-4 backdrop-blur-xl"
+            transition={{ delay: index * 0.08 }}
+            className={`group relative flex items-center justify-between overflow-hidden rounded-2xl border px-5 py-4 backdrop-blur-xl ${className}`}
           >
-            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/12 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-            <span className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 [box-shadow:inset_0_0_30px_rgba(103,232,249,0.15)]" />
-            <span className="relative z-10 flex items-center gap-3">
-              <span className="rounded-xl border border-cyan-200/25 bg-cyan-300/10 p-2.5 text-cyan-100">
-                <Icon className="h-4 w-4 transition duration-300 group-hover:scale-110 group-hover:-rotate-3" />
-              </span>
-              <span className="text-sm font-medium text-textStrong">{item.label}</span>
-            </span>
-            <span className="relative z-10 text-xs text-textSoft/80 transition duration-300 group-hover:text-cyan-100">
-              Abrir
-            </span>
+            {content}
+            <span className="relative z-10 text-xs text-textSoft">Abrir</span>
           </motion.a>
         );
       })}

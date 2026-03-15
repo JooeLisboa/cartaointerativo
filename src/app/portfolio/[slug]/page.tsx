@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { CinematicBackground } from '@/components/cinematic-background';
 import { ClinicaPremiumDemo } from '@/components/niche/clinica-premium-demo';
+import { EsteticaAutomotivaPremiumDemo } from '@/components/niche/estetica-automotiva-premium-demo';
 import { NicheFloatingCta } from '@/components/niche/niche-floating-cta';
 import { NicheFooter } from '@/components/niche/niche-footer';
 import { NicheHero } from '@/components/niche/niche-hero';
@@ -32,6 +33,10 @@ export default function NichePage({ params }: { params: { slug: string } }) {
 
   if (params.slug === 'clinica') {
     return <ClinicaPremiumDemo />;
+  }
+
+  if (params.slug === 'estetica-automotiva') {
+    return <EsteticaAutomotivaPremiumDemo />;
   }
 
   return (

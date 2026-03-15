@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: #040612;
+  color: #f3f7ff;
+  min-height: 100vh;
+}
+
+* {
+  border-color: rgba(148, 163, 184, 0.35);
+}

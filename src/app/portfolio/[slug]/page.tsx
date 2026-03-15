@@ -6,6 +6,7 @@ import { ClinicaPremiumDemo } from '@/components/niche/clinica-premium-demo';
 import { NicheFloatingCta } from '@/components/niche/niche-floating-cta';
 import { NicheFooter } from '@/components/niche/niche-footer';
 import { NicheHero } from '@/components/niche/niche-hero';
+import { InfluencerPremiumDemo } from '@/components/niche/influencer-premium-demo';
 import { NicheLinks } from '@/components/niche/niche-links';
 import { NicheProof } from '@/components/niche/niche-proof';
 import { NicheServices } from '@/components/niche/niche-services';
@@ -23,6 +24,10 @@ export default function NichePage({ params }: { params: { slug: string } }) {
   }
   if (params.slug === 'otica') {
     return <OticaPremiumDemo />;
+  }
+
+  if (params.slug === 'influencer') {
+    return <InfluencerPremiumDemo />;
   }
 
   if (params.slug === 'clinica') {

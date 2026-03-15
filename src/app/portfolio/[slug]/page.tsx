@@ -8,6 +8,7 @@ import { NicheHero } from '@/components/niche/niche-hero';
 import { NicheLinks } from '@/components/niche/niche-links';
 import { NicheProof } from '@/components/niche/niche-proof';
 import { NicheServices } from '@/components/niche/niche-services';
+import { OticaPremiumDemo } from '@/components/niche/otica-premium-demo';
 import { PremiumParticles } from '@/components/premium-particles';
 import { nicheCards } from '@/data/niche-cards';
 
@@ -19,6 +20,10 @@ export default function NichePage({ params }: { params: { slug: string } }) {
   if (!niche) {
     notFound();
   }
+  if (params.slug === 'otica') {
+    return <OticaPremiumDemo />;
+  }
+
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-bgDeep px-4 py-8 pb-24 text-textStrong sm:px-6">

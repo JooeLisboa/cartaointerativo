@@ -6,6 +6,13 @@ export const portfolioContent: PortfolioContent = {
     'Modelos premium para negócios que querem presença digital forte, organização e mais conversão.',
   items: [
     {
+      slug: 'chaianydeandrade',
+      title: 'Cartão premium para Chaiany Andrade',
+      shortDescription: 'Hub editorial BBB26 com atmosfera cinematográfica, CTA comercial e canais oficiais em fluxo mobile-first.',
+      icon: 'Sparkles',
+      ctaLabel: 'Ver cartão premium da Chaiany',
+    },
+    {
       slug: 'otica',
       title: 'Cartão interativo para Ótica',
       shortDescription: 'Experiência sofisticada com foco em confiança, armações premium e agendamento rápido.',

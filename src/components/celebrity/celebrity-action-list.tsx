@@ -31,10 +31,11 @@ const iconMap = {
 
 const actionVariants = {
   primary:
-    'border-cyan-300/55 bg-gradient-to-r from-cyan-300 via-sky-300 to-cyan-200 text-slate-950 shadow-[0_24px_38px_-28px_rgba(56,189,248,1)]',
+    'border-[rgba(245,158,11,0.55)] bg-gradient-to-r from-[#F97316] via-[#F59E0B] to-[#F2B233] text-[#2A170C] shadow-[0_24px_42px_-26px_rgba(249,115,22,0.95)]',
   secondary:
-    'border-violet-300/35 bg-gradient-to-r from-violet-400/30 to-cyan-300/20 text-slate-100 shadow-[0_22px_34px_-26px_rgba(167,139,250,0.75)]',
-  social: 'border-white/15 bg-slate-900/80 text-slate-100 hover:border-cyan-200/30 hover:bg-slate-900',
+    'border-[rgba(245,158,11,0.32)] bg-gradient-to-r from-[#D97706]/55 to-[#F59E0B]/30 text-[#FFF4DA] shadow-[0_22px_34px_-26px_rgba(245,158,11,0.78)]',
+  social:
+    'border-[rgba(245,158,11,0.2)] bg-[rgba(41,24,12,0.86)] text-[#FFF4DA] hover:border-[rgba(245,158,11,0.38)] hover:bg-[rgba(46,27,14,0.92)]',
 };
 
 export const CelebrityActionList = ({ actions }: CelebrityActionListProps) => {
@@ -43,9 +44,9 @@ export const CelebrityActionList = ({ actions }: CelebrityActionListProps) => {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay: 0.08 }}
-      className="rounded-[1.8rem] border border-white/10 bg-[#050b1ed1] p-3 backdrop-blur-xl"
+      className="rounded-[1.8rem] border border-[rgba(245,158,11,0.2)] bg-[rgba(41,24,12,0.82)] p-3 backdrop-blur-xl"
     >
-      <div className="mb-2 px-1 text-[11px] uppercase tracking-[0.22em] text-slate-400">Canais e ações oficiais</div>
+      <div className="mb-2 px-1 text-[11px] uppercase tracking-[0.22em] text-[#F3D9A2]/85">Canais e ações oficiais</div>
       <div className="grid gap-2">
         {actions.map((action, index) => {
           const variant = action.variant ?? 'social';
@@ -64,12 +65,12 @@ export const CelebrityActionList = ({ actions }: CelebrityActionListProps) => {
               className={`group flex items-center justify-between rounded-2xl border px-4 py-3.5 transition ${actionVariants[variant]}`}
             >
               <span className="flex items-center gap-3">
-                <span className="rounded-full border border-black/15 bg-black/10 p-2">
+                <span className="rounded-full border border-black/20 bg-black/10 p-2">
                   <Icon className="h-4 w-4" />
                 </span>
                 <span>
                   <span className="block text-sm font-semibold">{action.label}</span>
-                  <span className="mt-0.5 block text-xs opacity-80">{action.description}</span>
+                  <span className="mt-0.5 block text-xs opacity-85">{action.description}</span>
                 </span>
               </span>
               <ChevronRight className="h-4 w-4 opacity-70 transition group-hover:translate-x-0.5" />

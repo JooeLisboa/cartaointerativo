@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 
 export default function ChaianyAndradePortfolioPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden px-4 py-7 pb-20 text-slate-100 sm:px-6">
+    <main className="relative min-h-screen overflow-hidden bg-[#1B120B] px-4 py-7 pb-20 text-[#FFF4DA] sm:px-6">
       <CelebrityBackground />
 
       <div className="relative z-10 mx-auto flex w-full max-w-md flex-col gap-4">
-        <div className="flex gap-2 text-xs text-slate-300">
+        <div className="flex gap-2 text-xs text-[#F6D8A4]">
           <Link
             href="/"
-            className="rounded-full border border-white/15 bg-slate-900/70 px-4 py-2 backdrop-blur-xl transition hover:border-cyan-200/30"
+            className="rounded-full border border-[rgba(245,158,11,0.22)] bg-[rgba(41,24,12,0.74)] px-4 py-2 backdrop-blur-xl transition hover:border-[rgba(245,158,11,0.4)]"
           >
             Home
           </Link>
           <Link
             href="/portfolio"
-            className="rounded-full border border-white/15 bg-slate-900/70 px-4 py-2 backdrop-blur-xl transition hover:border-cyan-200/30"
+            className="rounded-full border border-[rgba(245,158,11,0.22)] bg-[rgba(41,24,12,0.74)] px-4 py-2 backdrop-blur-xl transition hover:border-[rgba(245,158,11,0.4)]"
           >
             Portfólio
           </Link>
